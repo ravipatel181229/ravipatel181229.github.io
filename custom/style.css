@@ -167,7 +167,9 @@ section{
 .theme-dark .bg-main{
     background: #263238;
 }
-.theme-dark .social-btn{
+.theme-dark .social-btn,
+.theme-dark .scroll-down-btn
+{
     color: #fff !important;
     border-color: #fff;
 }
