@@ -25,7 +25,7 @@ section{
     background: #fff;
 }
 .bg-main{
-    background: #f0e90d;
+    background: #ebe408;
 }
 .text-danger{
     color: #b71c1c !important;
@@ -37,7 +37,7 @@ section{
     opacity: 0;
     overflow: hidden;
     line-height: 1;
-    text-shadow: 1px 1px 0 #f0e90d, 2px 2px 0 black;
+    text-shadow: 1px 1px 0 #ebe408, 2px 2px 0 black;
 }
 .social-btn{
     height: 100px;
