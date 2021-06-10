@@ -53,7 +53,8 @@ $(function () {
 
     function renderWordCloud() {
         var list = [['JS', 45], ['CSS', 51], ['HTML', 36], ['PHP', 28], ['Angular', 30], ["Sql Server", 20], ["Swagger", 15],
-        ['ReactJs', 21], ['Wordpress', 10], ['MySql', 20], ["Drupal", 5], ["C# MVC", 21], ["Git", 21], ["WebApi", 15], ["WebApi", 15]];
+        ['ReactJs', 21], ['Wordpress', 10], ['MySql', 20], ["Drupal", 5], ["C# MVC", 21], ["Git", 21], ["WebApi", 15]
+            , ["Tailwind", 15], ["Gatsby", 15]];
         WordCloud(document.getElementById('wordCloud'), {
             list: list,
             wait: 100,
@@ -78,9 +79,9 @@ $(function () {
     new ScrollMagic.Scene({ triggerElement: "#experienceSection" })
         .setTween(tweenHelimpExperienceCard)
         .addTo(controller);
-        new ScrollMagic.Scene({ triggerElement: "#experienceSection" })
-            .setTween(tweenFlawlessExperienceCard)
-            .addTo(controller);
+    new ScrollMagic.Scene({ triggerElement: "#experienceSection" })
+        .setTween(tweenFlawlessExperienceCard)
+        .addTo(controller);
     ////////////      Experience      ////////////////////
 
 
