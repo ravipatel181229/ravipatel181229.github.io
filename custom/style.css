@@ -137,18 +137,35 @@ section{
     padding: 10px;
     position: relative;
     opacity: 0;
+    margin-top: 10px;
 }
 .experience-card:hover{
     box-shadow: 0 0 2px 0 #957226;
 }
-#syonExperienceCard{
-    left: -100%;
+.experience-card.active::before{
+    content: "\1F4BB";
+    color: #b71c1c;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 1.5rem;
 }
-#helimpExperienceCard{
+/* #syonExperienceCard{
     right: -100%;
 }
+#helimpExperienceCard{
+    left: -100%;
+}
+#flawlessExperienceCard{
+    right: -100%;
+} */
 /* Experience Section */
-
+.tags .tag{
+    background-color: #b71c1c !important;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 15px;
+}
 
 
 /* Footer Section */
@@ -185,5 +202,11 @@ section{
 .theme-dark .dark-mode-btn{
     color: #fff !important;
     text-shadow: 0 0 20px #e3e1e1;
+}
+.tags .tag{
+    background-color: #b71c1c !important;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 15px;
 }
 /* Dark Theme CSS */

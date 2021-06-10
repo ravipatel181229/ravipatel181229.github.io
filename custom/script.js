@@ -71,12 +71,16 @@ $(function () {
     ////////////      Experience      ////////////////////
     var tweenSyonExperienceCard = TweenMax.to("#syonExperienceCard", { left: 0, opacity: 1, duration: 1 });
     var tweenHelimpExperienceCard = TweenMax.to("#helimpExperienceCard", { right: 0, opacity: 1, duration: 1 });
+    var tweenFlawlessExperienceCard = TweenMax.to("#flawlessExperienceCard", { right: 0, opacity: 1, duration: 1 });
     new ScrollMagic.Scene({ triggerElement: "#experienceSection" })
         .setTween(tweenSyonExperienceCard)
         .addTo(controller);
     new ScrollMagic.Scene({ triggerElement: "#experienceSection" })
         .setTween(tweenHelimpExperienceCard)
         .addTo(controller);
+        new ScrollMagic.Scene({ triggerElement: "#experienceSection" })
+            .setTween(tweenFlawlessExperienceCard)
+            .addTo(controller);
     ////////////      Experience      ////////////////////
 
 
