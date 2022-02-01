@@ -16,9 +16,13 @@ India based full-stack web developer.
 
 ## Experience
 
+- Flawless Technologies
+  > Full-Stack Developer | 
+  > Since 2021
+ 
 - Helimp Softomation
   > Full-Stack Developer | 
-  > Since 2019
+  > 2019-2021
 
 - Syon Spftware Solutions
   > Web Developer | 
