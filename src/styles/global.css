@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+@import "~@flaticon/flaticon-uicons/css/brands/all";
+@import "~@flaticon/flaticon-uicons/css/Regular/Straight";
+
+
+@layer base {
+    html {
+        font-family: 'Titillium Web', sans-serif;
+    }
+  }
