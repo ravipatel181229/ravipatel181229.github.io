@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql, type HeadFC, type PageProps } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 const pageStyles = {
   color: "#252323",
@@ -10,17 +11,39 @@ const IndexPage: React.FC<PageProps> = ({ data }: any) => {
     <main style={pageStyles}>
       <div className="pin-container">
         <section id="profileSection" className="container-fluid bg-primary text-light pb-10 border-b-8 border-b-secondary">
-          <div className="text-center p-20 text-4xl font-bold leading-snug uppercase">
-            <h1 className="text-dark text-6xl hover:text-7xl transition-all">Hi There !!</h1>
-            <h1>
-              I am Ravi Patel,
-              <br />
-              A Full-stack Web developer from india,
-              <br />
-              working on Front-end As well as Back-end Technologies.
-            </h1>
+          <StaticImage src="../images/code.JPG" alt="Ravi Patel"
+            className="fixed h-full w-full -z-10 left-0 blur-md" />
+          <div className="md:flex text-center md:text-left justify-between gap-x-9 p-20 text-4xl font-bold leading-snug uppercase">
+            <StaticImage src="../images/picture.jpg" alt="Ravi Patel"
+              className="w-100 md:w-48 border-2 border-secondary hover:border-8 transition-all" />
+            <div>
+              <h1 className="text-dark text-6xl">Hi There !!</h1>
+              <h1>
+                I am <span className="text-light">Ravi Patel</span>,
+              </h1>
+              <span className="text-3xl">
+                A Full-stack Web developer from india,<br /> working on Front-end As well as Back-end Technologies.
+              </span>
+            </div>
+            <div className="flex flex-col justify-between">
+              <div className="text-center text-7xl">
+                <a href="https://github.com/ravipatel181229" target="_blank">
+                  <i className="fi fi-brands-github hover:text-secondary"></i>
+                </a>
+              </div>
+              <div className="text-center text-7xl">
+                <a href="https://linkedin.com/in/ravipatel181229" target="_blank">
+                  <i className="fi fi-brands-linkedin hover:text-secondary"></i>
+                </a>
+              </div>
+              <div className="text-center text-7xl">
+                <a href="mailto:ravihpatel181229@gmail.com" target="_blank">
+                  <i className="fi fi-rs-envelope hover:text-secondary"></i>
+                </a>
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-3 hidden">
             <div className="text-center text-7xl">
               <a href="https://github.com/ravipatel181229" target="_blank">
                 <i className="fi fi-brands-github hover:text-secondary"></i>
@@ -47,11 +70,11 @@ const IndexPage: React.FC<PageProps> = ({ data }: any) => {
         </section>
         <section className="container-fluid border-b-8 border-primary py-10 pb-20">
           <div className="text-center">
-            <h1 className="text-3xl font-bold">Top Skills</h1>
+            <h1 className="text-3xl font-bold text-light">Top Skills</h1>
             <div className="mt-5 grid grid-cols-1 md:grid-cols-4">{
               Object.entries(data.markdownRemark.frontmatter.skills).map(([key, value]: any) => {
                 return <div key={key}>
-                  <h3 className="mt-5 text-dark font-bold uppercase text-2xl">{key}</h3>
+                  <h3 className="mt-5 text-light font-bold uppercase text-2xl">{key}</h3>
                   <div className="flex gap-2 justify-center mt-3">
                     {value.map((skill: any) => {
                       return <span key={skill} className="p-3 bg-primary text-light rounded-sm">{skill}</span>
@@ -73,7 +96,7 @@ const IndexPage: React.FC<PageProps> = ({ data }: any) => {
                     <div id="flawlessExperienceCard" className="card experience-card active" role="button">
                       <div className="row">
                         <div className="col-12 text-center">
-                          <h5 className="mt-5 text-secondary font-bold uppercase text-2xl">{experience.comapny}</h5>
+                          <h5 className="mt-5 text-secondary hover:text-light font-bold uppercase text-2xl">{experience.company}</h5>
                           <h4>{experience.role}</h4>
                           <div className="flex gap-1 justify-center my-2">
                             {
