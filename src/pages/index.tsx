@@ -1,47 +1,11 @@
 import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
+import { graphql, type HeadFC, type PageProps } from "gatsby"
 
 const pageStyles = {
   color: "#252323",
 }
+const IndexPage: React.FC<PageProps> = ({ data }: any) => {
 
-const technologies = {
-  "Front-end": [
-    "HTML", "CSS", "Javascript"
-  ],
-  "Frameworks": [
-    "ReactJS", "AngularJS", "NextJS", "Gatsby"
-  ],
-  "Backend": [
-    ".NET", "NodeJS"
-  ],
-  "Database": [
-    "MSSql", "MongoDB", "MySql"
-  ]
-}
-
-const experiences = [
-  {
-    comapny: "Flawless Technologies",
-    role: "Full-stack Developer",
-    period: "since 2021",
-    skills: ["React", "JS", "C#", "Web API"]
-  },
-  {
-    comapny: "Helimp Softomation LLC.",
-    role: "Full-stack Developer",
-    period: "2019-2021",
-    skills: ["AngularJS", "PHP", "Codeignite", "NodeJS"]
-  },
-  {
-    comapny: "Syon Software Solutions",
-    role: "Web Developer",
-    period: "2016-2019",
-    skills: ["C#", "PHP", "Wordpress", "RESTFul API"]
-  }
-]
-
-const IndexPage: React.FC<PageProps> = () => {
   return (
     <main style={pageStyles}>
       <div className="pin-container">
@@ -85,12 +49,12 @@ const IndexPage: React.FC<PageProps> = () => {
           <div className="text-center">
             <h1 className="text-3xl font-bold">Top Skills</h1>
             <div className="mt-5 grid grid-cols-1 md:grid-cols-4">{
-              Object.entries(technologies).map(([key, value]) => {
-                return <div>
+              Object.entries(data.markdownRemark.frontmatter.skills).map(([key, value]: any) => {
+                return <div key={key}>
                   <h3 className="mt-5 text-dark font-bold uppercase text-2xl">{key}</h3>
                   <div className="flex gap-2 justify-center mt-3">
                     {value.map((skill: any) => {
-                      return <span className="p-3 bg-primary text-light rounded-sm">{skill}</span>
+                      return <span key={skill} className="p-3 bg-primary text-light rounded-sm">{skill}</span>
                     })}
                   </div>
                 </div>
@@ -104,8 +68,8 @@ const IndexPage: React.FC<PageProps> = () => {
             <h3 className="text-3xl font-bold">Professional Experiences</h3>
             <div className="grid grid-cols-1 md:grid-cols-3">
               {
-                experiences.map(experience => {
-                  return <div className="col-sm-6 col-lg-4 mt-3 mt-sm-0">
+                data.markdownRemark.frontmatter.experiences.map((experience: any, index: any) => {
+                  return <div key={index} className="col-sm-6 col-lg-4 mt-3 mt-sm-0">
                     <div id="flawlessExperienceCard" className="card experience-card active" role="button">
                       <div className="row">
                         <div className="col-12 text-center">
@@ -113,8 +77,8 @@ const IndexPage: React.FC<PageProps> = () => {
                           <h4>{experience.role}</h4>
                           <div className="flex gap-1 justify-center my-2">
                             {
-                              experience.skills.map(skill => {
-                                return <span className="p-2 border border-light">{skill}</span>
+                              experience.skills.map((skill: any) => {
+                                return <span key={skill} className="p-2 border border-light">{skill}</span>
                               })
                             }
                           </div>
@@ -137,3 +101,21 @@ const IndexPage: React.FC<PageProps> = () => {
 export default IndexPage
 
 export const Head: HeadFC = () => <title>Home Page</title>
+
+export const pageQuery = graphql`
+query IndexPageQuery {
+  markdownRemark(fileAbsolutePath: { regex: "/content.md/" }) {
+    frontmatter {
+      skills{
+        Frontend
+        Frameworks
+        Backend
+        Database
+      }
+      experiences{
+        company,role,period,skills
+      }
+    }
+  }
+}
+`
