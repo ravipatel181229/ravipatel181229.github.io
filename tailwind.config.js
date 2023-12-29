@@ -10,9 +10,9 @@ module.exports = {
       'body': ['"Titillium Web", sans-serif']
     },
     colors: {
-      "primary": "#397367",
+      "primary": "#002349",
       "secondary": "#AFD0D6",
-      "dark": "#001021",
+      "dark": "#957C3D",
       "light": "#E0FBFC"
     }
   },

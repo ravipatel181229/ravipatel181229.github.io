@@ -1,4 +1,11 @@
 ---
+socials:
+    -   link: https://github.com/ravipatel181229
+        icon: fi fi-brands-github
+    -   link: https://linkedin.com/in/ravipatel181229
+        icon: fi fi-brands-linkedin
+    -   link: mailto:ravihpatel181229@gmail.com
+        icon: fi fi-rs-envelope
 skills:
     Frontend:
         - HTML
@@ -20,6 +27,7 @@ experiences:
     -   company: "Flawless Technologies"
         role: "Full-stack Developer"
         period: "since 2021"
+        link: https://www.flawlesstechnologies.in/
         skills: 
             - React
             - JS
@@ -28,6 +36,7 @@ experiences:
     -   company: "Helimp Softomation LLC."
         role: "Full-stack Developer"
         period: "2019-2021"
+        link: https://helimp.com/
         skills: 
             - AngularJS
             - PHP
