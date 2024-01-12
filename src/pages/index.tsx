@@ -14,10 +14,10 @@ const IndexPage: React.FC<PageProps> = ({ data }: any) => {
         <section id="profileSection" className="container-fluid bg-primary text-light pb-10 border-b-8 border-b-secondary">
           <StaticImage src="../images/code.JPG" alt="Ravi Patel"
             className="fixed h-full w-full -z-10 left-0 blur-2xl" />
-          <div className="md:flex text-center md:text-left justify-between gap-x-9 p-20 text-4xl font-bold leading-snug uppercase">
+          <div className="md:flex text-center md:text-left justify-between gap-x-9 lg:p-20 p-10 text-4xl font-bold leading-snug uppercase">
             <StaticImage src="../images/picture.jpg" alt="Ravi Patel"
-              className="w-100 md:w-48 border-2 border-secondary hover:border-8 transition-all" />
-            <div>
+              className="w-100 md:w-48 border-2 border-secondary hover:border-8  transition-all" />
+            <div className="mt-10 lg:mt-0">
               <h1 className="text-dark text-6xl">Hi There !!</h1>
               <h1>
                 I am <span className="text-light">Ravi Patel</span>,
@@ -26,7 +26,7 @@ const IndexPage: React.FC<PageProps> = ({ data }: any) => {
                 A Full-stack Web developer from india,<br /> working on Front-end As well as Back-end Technologies.
               </span>
             </div>
-            <div className="flex flex-col justify-between">
+            <div className="flex lg:flex-col mt-10 lg:mt-0 justify-between">
               {
                 dataJson.socials.map((social: any, index: number) => {
                   return <div key={index} className="text-center text-7xl">
